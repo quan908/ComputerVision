@@ -72,9 +72,12 @@ def main() -> None:
 
     
     warped = four_point_transform(resize_image,screen_cnt.reshape(4, 2)) 
+    warp_gray = cv.cvtColor(warped,cv.COLOR_BGR2GRAY)
+    warp_final = cv.adaptiveThreshold(warp_gray,255,cv.ADAPTIVE_THRESH_GAUSSIAN_C,cv.THRESH_BINARY,11,10)
+
           
   
-    cv.imshow("scanned", warped)
+    cv.imshow("scanned", warp_final)
  
     cv.waitKey(0)
     cv.destroyAllwindows()
