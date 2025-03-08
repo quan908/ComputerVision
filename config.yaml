@@ -1,0 +1,6 @@
+train: C:\Users\Student\Documents\AI2\yolo\customobj\train
+val: C:\Users\Student\Documents\AI2\yolo\customobj\test
+
+nc: 2
+
+names: ["Iunatic","porling"]
